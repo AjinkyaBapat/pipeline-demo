@@ -9,7 +9,12 @@ pipeline {
 
     stage('Buzz Test') {
       steps {
-        sh 'bash ./jenkins/test-all.sh'
+        sh '''chmod +x ./jenkins/test-all.sh
+chmod +x ./jenkins/test-backend.sh
+chmod +x ./jenkins/test-frontend.sh
+chmod +x ./jenkins/test-static.sh
+chmod +x ./jenkins/test-performance.sh
+bash ./jenkins/test-all.sh'''
       }
     }
 
