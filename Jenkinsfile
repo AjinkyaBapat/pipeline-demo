@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Buzz Build') {
       steps {
-        sh './jenkins/build.sh'
+        sh '''sh "chmod +x -R ${env.WORKSPACE}"
+./jenkins/build.sh'''
       }
     }
 
