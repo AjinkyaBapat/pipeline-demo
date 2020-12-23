@@ -10,13 +10,6 @@ pipeline {
 
     stage('Fluffy Test') {
       parallel {
-        stage('Fluffy Test') {
-          steps {
-            sh 'chmod +x ./jenkins/test-all.sh'
-            junit 'target/**/TEST*.xml'
-          }
-        }
-
         stage('Backend') {
           steps {
             sh 'chmod +x ./jenkins/test-backend.sh'
