@@ -1,20 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('Buzz Build') {
+    stage('Fluffy Build') {
       steps {
         sh 'bash ./jenkins/build.sh'
       }
     }
 
-    stage('Buzz Test') {
+    stage('Fluffy Test') {
       steps {
-        sh '''chmod +x ./jenkins/test-all.sh
-chmod +x ./jenkins/test-backend.sh
-chmod +x ./jenkins/test-frontend.sh
-chmod +x ./jenkins/test-static.sh
-chmod +x ./jenkins/test-performance.sh
-bash ./jenkins/test-all.sh'''
+        sh 'chmod +x ./jenkins/test-all.sh'
+      }
+    }
+
+    stage('Fluffy Deploy') {
+      steps {
+        sh 'chmod +x ./jenkins/deploy.sh staging'
       }
     }
 
